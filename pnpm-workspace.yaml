@@ -1,0 +1,7 @@
+packages:
+  - 'mobile'
+  - 'web'
+  - 'backend'
+  - 'shared'
+
+

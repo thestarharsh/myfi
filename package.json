@@ -1,0 +1,33 @@
+{
+  "name": "finance-app",
+  "version": "1.0.0",
+  "description": "Cross-platform personal finance management application",
+  "private": true,
+  "scripts": {
+    "dev:mobile": "pnpm --filter mobile start",
+    "dev:web": "pnpm --filter web dev",
+    "dev:backend": "pnpm --filter backend dev",
+    "build:mobile": "pnpm --filter mobile build",
+    "build:web": "pnpm --filter web build",
+    "build:backend": "pnpm --filter backend build",
+    "test:backend": "pnpm --filter backend test",
+    "test:mobile": "pnpm --filter mobile test",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check",
+    "clean": "pnpm -r clean"
+  },
+  "keywords": [
+    "finance",
+    "expense-tracking",
+    "react-native",
+    "react",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.20.0"
+}

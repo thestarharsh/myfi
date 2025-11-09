@@ -1,0 +1,52 @@
+{
+  "common": {
+    "appName": "Finance App",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "back": "Back"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "logout": "Logout"
+  },
+  "accounts": {
+    "title": "Accounts",
+    "addAccount": "Add Account",
+    "balance": "Balance",
+    "type": "Type"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "addTransaction": "Add Transaction",
+    "amount": "Amount",
+    "category": "Category",
+    "date": "Date",
+    "description": "Description"
+  },
+  "goals": {
+    "title": "Goals",
+    "addGoal": "Add Goal",
+    "targetAmount": "Target Amount",
+    "currentAmount": "Current Amount",
+    "targetDate": "Target Date"
+  },
+  "budgets": {
+    "title": "Budgets",
+    "addBudget": "Add Budget",
+    "budgetAmount": "Budget Amount",
+    "spent": "Spent",
+    "remaining": "Remaining"
+  }
+}
+
+

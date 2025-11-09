@@ -1,0 +1,52 @@
+{
+  "common": {
+    "appName": "Application Financière",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "back": "Retour"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de passe",
+    "name": "Nom",
+    "logout": "Déconnexion"
+  },
+  "accounts": {
+    "title": "Comptes",
+    "addAccount": "Ajouter un compte",
+    "balance": "Solde",
+    "type": "Type"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "addTransaction": "Ajouter une transaction",
+    "amount": "Montant",
+    "category": "Catégorie",
+    "date": "Date",
+    "description": "Description"
+  },
+  "goals": {
+    "title": "Objectifs",
+    "addGoal": "Ajouter un objectif",
+    "targetAmount": "Montant cible",
+    "currentAmount": "Montant actuel",
+    "targetDate": "Date cible"
+  },
+  "budgets": {
+    "title": "Budgets",
+    "addBudget": "Ajouter un budget",
+    "budgetAmount": "Montant du budget",
+    "spent": "Dépensé",
+    "remaining": "Restant"
+  }
+}
+
+
