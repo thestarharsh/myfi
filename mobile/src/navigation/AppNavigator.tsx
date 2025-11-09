@@ -3,8 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-// Screens (placeholder - will be created)
-const HomeScreen = () => null;
+// Import screens
+import DashboardScreen from '../screens/DashboardScreen';
+import AddTransactionScreen from '../screens/AddTransactionScreen';
+
+// Placeholder screens
 const TransactionsScreen = () => null;
 const GoalsScreen = () => null;
 const BudgetsScreen = () => null;
@@ -16,7 +19,8 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Dashboard" component={DashboardScreen} />
+      <Tab.Screen name="Add Transaction" component={AddTransactionScreen} />
       <Tab.Screen name="Transactions" component={TransactionsScreen} />
       <Tab.Screen name="Goals" component={GoalsScreen} />
       <Tab.Screen name="Budgets" component={BudgetsScreen} />

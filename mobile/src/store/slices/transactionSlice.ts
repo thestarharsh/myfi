@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { Transaction, CreateTransactionDto, UpdateTransactionDto } from '@finance-app/shared';
+import { Transaction, CreateTransactionDto, UpdateTransactionDto, TransactionStats } from '@finance-app/shared';
 import * as transactionService from '../../services/transaction.service';
 
 interface TransactionState {
   transactions: Transaction[];
   selectedTransaction: Transaction | null;
+  stats: TransactionStats | null;
   loading: boolean;
+  statsLoading: boolean;
   error: string | null;
   pagination: {
     total: number;
@@ -18,7 +20,9 @@ interface TransactionState {
 const initialState: TransactionState = {
   transactions: [],
   selectedTransaction: null,
+  stats: null,
   loading: false,
+  statsLoading: false,
   error: null,
   pagination: {
     total: 0,
@@ -57,6 +61,13 @@ export const deleteTransaction = createAsyncThunk(
   }
 );
 
+export const fetchTransactionStats = createAsyncThunk(
+  'transactions/fetchStats',
+  async (params?: { months?: number }) => {
+    return await transactionService.getTransactionStats(params);
+  }
+);
+
 const transactionSlice = createSlice({
   name: 'transactions',
   initialState,
@@ -82,6 +93,18 @@ const transactionSlice = createSlice({
       .addCase(fetchTransactions.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch transactions';
+      })
+      .addCase(fetchTransactionStats.pending, (state) => {
+        state.statsLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchTransactionStats.fulfilled, (state, action) => {
+        state.statsLoading = false;
+        state.stats = action.payload;
+      })
+      .addCase(fetchTransactionStats.rejected, (state, action) => {
+        state.statsLoading = false;
+        state.error = action.error.message || 'Failed to fetch transaction stats';
       })
       .addCase(createTransaction.fulfilled, (state, action) => {
         state.transactions.unshift(action.payload);
