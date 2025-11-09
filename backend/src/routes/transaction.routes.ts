@@ -5,6 +5,7 @@ import {
   createTransaction,
   updateTransaction,
   deleteTransaction,
+  getTransactionStats,
 } from '../controllers/transaction.controller';
 import { authenticateToken } from '../middleware/auth.middleware';
 
@@ -13,6 +14,7 @@ const router = Router();
 router.use(authenticateToken);
 
 router.get('/', getTransactions);
+router.get('/stats/overview', getTransactionStats);
 router.get('/:id', getTransaction);
 router.post('/', createTransaction);
 router.put('/:id', updateTransaction);

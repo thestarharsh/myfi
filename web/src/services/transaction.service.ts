@@ -3,6 +3,7 @@ import {
   CreateTransactionDto,
   UpdateTransactionDto,
   PaginatedResponse,
+  TransactionStats,
 } from '@finance-app/shared';
 import apiClient from './api.client';
 
@@ -62,6 +63,16 @@ export const updateTransaction = async (
 
 export const deleteTransaction = async (id: string): Promise<void> => {
   await apiClient.instance.delete(`/transactions/${id}`);
+};
+
+export const getTransactionStats = async (params?: {
+  months?: number;
+}): Promise<TransactionStats> => {
+  const response = await apiClient.instance.get<{ success: boolean; data: TransactionStats }>(
+    '/transactions/stats/overview',
+    { params }
+  );
+  return response.data.data;
 };
 
 

@@ -42,7 +42,7 @@ export default [
     },
   },
   {
-    ignores: ['dist', 'node_modules', '*.config.js', 'vite-env.d.ts'],
+    ignores: ['dist', 'node_modules', '*.config.js', 'vite-env.d.ts', 'tests/**/*'],
   },
 ];
 

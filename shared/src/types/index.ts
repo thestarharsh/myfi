@@ -201,6 +201,26 @@ export interface PaginatedResponse<T> {
   totalPages: number;
 }
 
+// Transaction Statistics Types
+export interface TransactionStats {
+  totalNeeds: number;
+  totalWants: number;
+  needsPercentage: number;
+  wantsPercentage: number;
+  monthlyData: MonthlyTransactionData[];
+  financialAdvice: string;
+}
+
+export interface MonthlyTransactionData {
+  month: string;
+  year: number;
+  needs: number;
+  wants: number;
+  total: number;
+  needsPercentage: number;
+  wantsPercentage: number;
+}
+
 // Common Types
 export interface PaginationParams {
   page?: number;
